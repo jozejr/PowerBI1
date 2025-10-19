@@ -1,0 +1,52 @@
+-- Criação do Banco de Dados (Opcional, caso ainda não exista)
+CREATE DATABASE IF NOT EXISTS Empresa;
+USE Empresa;
+
+-- -----------------------------------------------------
+-- Tabela `Gerentes`
+-- Armazena os dados dos gerentes.
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Gerentes (
+  `id_gerente` INT NOT NULL AUTO_INCREMENT,
+  `nome_gerente` VARCHAR(255) NOT NULL,
+  `mgr_ssn` VARCHAR(15) NULL, -- Social Security Number do Gerente, pode ser usado como chave estrangeira
+  PRIMARY KEY (`id_gerente`),
+  UNIQUE INDEX `nome_gerente_UNIQUE` (`nome_gerente` ASC) VISIBLE);
+
+-- -----------------------------------------------------
+-- Tabela `Departamentos`
+-- Armazena os dados dos departamentos, incluindo o gerente responsável.
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Departamentos (
+  `dnumber` INT NOT NULL,
+  `nome_departamento` VARCHAR(255) NOT NULL,
+  `mgr_ssn` VARCHAR(15) NULL,
+  PRIMARY KEY (`dnumber`));
+
+-- -----------------------------------------------------
+-- Tabela `Colaboradores`
+-- Armazena os dados dos colaboradores e a sua relação com um gerente.
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS Colaboradores (
+  `id_colaborador` INT NOT NULL AUTO_INCREMENT,
+  `nome_colaborador` VARCHAR(255) NOT NULL,
+  `id_gerente_responsavel` INT NULL,
+  PRIMARY KEY (`id_colaborador`),
+  INDEX `fk_colaborador_gerente_idx` (`id_gerente_responsavel` ASC) VISIBLE,
+  CONSTRAINT `fk_colaborador_gerente`
+    FOREIGN KEY (`id_gerente_responsavel`)
+    REFERENCES Gerentes(`id_gerente`));
+
+-- -----------------------------------------------------
+-- Inserção de Dados
+-- -----------------------------------------------------
+
+-- Populando a tabela de Gerentes
+-- Inserindo os 3 gerentes distintos da primeira imagem.
+INSERT INTO Gerentes (nome_gerente) VALUES
+('John Smith'),
+('Franklin Wong'),
+('James Borg'); -- James Borg aparece como colaborador, mas para um modelo mais robusto, ele poderia ser um gerente de nível inferior. Assumindo os 3 distintos da imagem.
+
+-- Populando a tabela de Departamentos
+-- Inserindo os dados
