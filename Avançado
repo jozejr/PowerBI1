@@ -1,0 +1,39 @@
+# Relatório Avançado de Análise Financeira com Power BI
+
+## 📝 Descrição do Projeto
+
+Este projeto, desenvolvido para o bootcamp Power BI Analyst da DIO, consiste em um relatório interativo e avançado de análise financeira. O objetivo foi aplicar conceitos de layout profissional, navegabilidade entre páginas, uso de indicadores para alternância de visuais e segmentação de dados para criar uma experiência de usuário rica e intuitiva.
+
+O relatório permite uma análise desde KPIs de alto nível até detalhes por produto e segmento de mercado.
+
+## 🚀 Tecnologias e Recursos Utilizados
+
+- **Power BI Desktop:** Ferramenta principal para ETL, modelagem e visualização de dados.
+- **Power Query:** Utilizado para a limpeza e transformação inicial dos dados.
+
+- **DAX (Data Analysis Expressions):** Para a criação de métricas implícitas.
+- **Indicadores (Bookmarks) e Botões:** Para criar a funcionalidade de alternância entre gráficos na página principal.
+- **Navegação entre Páginas:** Para conectar a visão geral com a página de detalhes.
+
+## 📊 Visualização do Relatório
+
+Você pode acessar o relatório interativo publicado no Power BI Service através do link abaixo:
+
+[**Clique aqui para ver o Relatório Publicado**](COLE-AQUI-O-LINK-PÚBLICO-DO-SEU-RELATÓRIO)
+
+*(Para obter este link: no Power BI Service, vá em Arquivo > Inserir relatório > Publicar na Web (público) e copie o link gerado).*
+
+---
+
+### Amostra do Relatório
+*Cole aqui um ou dois prints do seu relatório finalizado para que as pessoas possam ver rapidamente o seu trabalho.*
+
+![Página Principal](URL_DO_SEU_PRINT_1)
+![Página de Detalhes](URL_DO_SEU_PRINT_2)
+
+---
+
+## 📂 Estrutura do Projeto
+
+- **/Financial Sample.xlsx:** A base de dados original utilizada na análise.
+- **/nome-do-seu-projeto.pbix:** O arquivo fonte do Power BI contendo todo o desenvolvimento do relatório.
